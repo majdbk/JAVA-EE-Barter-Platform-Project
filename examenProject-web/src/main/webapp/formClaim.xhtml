@@ -1,0 +1,40 @@
+
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+
+ <div class="col-md-6">
+<h:form rendered="#{forumBean.displayClaim}" id="form">
+<div class="form-group">
+		<h:panelGrid columns="1">
+			<h:selectOneMenu value="#{forumBean.frmc.cause}" >
+			<f:selectItem itemValue="Contenu Indiserable" itemLabel="Contenu Indiserable" />
+
+    <f:selectItem itemValue="Arnaque" itemLabel="Arnaque" />
+
+    <f:selectItem itemValue="Faux profil" itemLabel="Faux profil" />
+			</h:selectOneMenu>
+			
+
+			
+			
+			
+		</h:panelGrid>
+		<h:panelGrid columns="1">
+
+			<h:commandButton actionListener="#{forumBean.doAddClaim()}" id="btn"
+				value="add" />
+			<h:message for="btn"/>
+			
+			
+
+
+		</h:panelGrid>
+		</div>
+	</h:form>
+
+</div>
+
+</ui:composition>

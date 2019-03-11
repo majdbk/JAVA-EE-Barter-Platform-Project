@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+ <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/template/templatefront.xhtml"> 
+
+<ui:define name="main">
+
+ <div class="col-md-5 col-sm-6">
+ <h3 class="widget-title">Login</h3>
+ <div class="contact-form">
+
+<h:form class="contact-form">
+	<h:panelGrid columns="2">
+	<h:outputText value="Login"></h:outputText>
+	<h:inputText value="#{loginBean.user.login}" />
+	<h:outputText value="Password"></h:outputText>
+	<h:inputSecret value="#{loginBean.user.password}" />
+	<h:commandButton  action="#{loginBean.DoLogin2()}" value="Valider" styleClass="mainBtn" />
+	<h:outputText value="#{loginBean.message}" style="color:red" />
+	</h:panelGrid>
+	</h:form>
+	
+	
+	</div>
+	</div>
+</ui:define>
+</ui:composition>

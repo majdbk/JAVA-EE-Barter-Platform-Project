@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	
+	<h:outputStylesheet library="resouresback/css" name="bootstrap.css" ></h:outputStylesheet>
+	<h:outputScript library="resouresback/js/morris" name="morris-0.4.3.min.css"> </h:outputScript>
+	<h:outputStylesheet library="resouresback/css" name="custom.css" ></h:outputStylesheet>
+    
+    <h:outputScript library="resouresback/js" name="jquery-1.10.2.js"> </h:outputScript>
+    <h:outputScript library="resouresback/js" name="bootstrap.min.js"> </h:outputScript>
+	<h:outputScript library="resouresback/js" name="jquery.metisMenu.js"> </h:outputScript>
+    <h:outputScript library="resouresback/js/morris" name="raphael-2.1.0.min.js"> </h:outputScript>
+    <h:outputScript library="resouresback/js/morris" name="morris.js"> </h:outputScript>
+    <h:outputScript library="resouresback/js" name="custom.js"> </h:outputScript>
+    
+    <title><ui:insert name="title"></ui:insert></title> 
+	
+
+</h:head> 
+
+
+
+<h:body> 
+
+<div id="wrapper">
+
+		<ui:include src="/template/templateback/header.xhtml" />
+		<ui:include src="/template/templateback/droite.xhtml" />
+		
+		<div id="page-wrapper" >
+  	
+  				 <ui:insert name="content"></ui:insert>
+             
+		</div>
+</div>
+
+</h:body> 
+</html>

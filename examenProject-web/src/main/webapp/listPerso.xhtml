@@ -1,0 +1,143 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html" >
+
+<div class="panel panel-default">
+       
+        	<div class="panel-body">
+            	<div class="table-responsive">
+
+<h:form>
+		<h:dataTable value="#{forumBean.ListPerso()}" var="x" border="1" styleClass="table table-striped table-bordered table-hover">
+
+			<f:facet name="header">
+				<h:outputText value="manage personal forums" />
+			</f:facet>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="category" />
+				</f:facet>
+				<h:outputText value="#{x.category}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="date" />
+				</f:facet>
+				<h:outputText value="#{x.date}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="sujet" />
+				</f:facet>
+				<h:outputText value="#{x.subject}" />
+			</h:column>
+
+               <h:column>
+				<f:facet name="header">
+					<h:outputText value="note" />
+				</f:facet>
+				<h:outputText value="#{x.note}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="swapper" />
+				</f:facet>
+				<h:outputText value="#{x.swapper.firstname}" />
+			</h:column>
+			
+			
+			
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="nombre" />
+				</f:facet>
+				<h:outputText value="#{forumBean.NbCom(x.idForum)}" />
+			</h:column>
+			
+			
+
+                 <h:column>
+				<f:facet name="header">
+					<h:outputText value="choisir" />
+				</f:facet>
+				<h:commandButton value="choisir" styleClass="btn btn-primary btn-sm">
+				<f:setPropertyActionListener
+				 value="#{x}" target="#{forumBean.forum}" />
+				<f:setPropertyActionListener 
+				value="true" target="#{forumBean.displayForm}" />
+				
+				</h:commandButton>
+				</h:column>
+				
+				
+				
+				
+				
+				<h:column>
+				<f:facet name="header">
+					<h:outputText value="like" />
+				</f:facet>
+				<h:commandButton value="like" action="#{forumBean.dolike()}" styleClass="btn btn-primary btn-sm">
+				<f:setPropertyActionListener
+				 value="#{x}" target="#{forumBean.forum}" />
+				
+				
+				
+				</h:commandButton>
+				
+			</h:column>
+
+			
+               <h:column>
+				<f:facet name="header">
+					<h:outputText value="show" />
+				</f:facet>
+				<h:commandButton value="show" action="#{forumBean.Show2(x.idForum)}" styleClass="btn btn-primary btn-sm">
+				<f:setPropertyActionListener
+				 value="#{x}" target="#{forumBean.forum}" />
+				<f:setPropertyActionListener 
+				value="true" target="#{forumBean.displayCom}" />
+				
+				
+				</h:commandButton>
+				
+			</h:column>
+ <h:column>
+				<f:facet name="header">
+					<h:outputText value="reclammer" />
+				</f:facet>
+				<h:commandButton value="reclammer" styleClass="btn btn-primary btn-sm">
+				<f:setPropertyActionListener
+				 value="#{x}" target="#{forumBean.forum}" />
+				<f:setPropertyActionListener 
+				value="true" target="#{forumBean.displayClaim}" />
+				
+				
+				</h:commandButton>
+				
+			</h:column>
+
+		</h:dataTable>
+
+		
+		<h:commandButton actionListener="#{forumBean.doNew()}" 
+		value="new" styleClass="btn btn-primary btn-sm" />
+		<h:commandButton actionListener="#{forumBean.Show()}" 
+		value="show" styleClass="btn btn-primary btn-sm"/>
+
+	</h:form>
+	
+	<h:form>
+			<h:commandButton action="#{loginBean.doLogout()}" value="logout" styleClass="btn btn-primary btn-sm"/>
+	</h:form>
+
+	</div>
+      </div>
+</div>
+
+	
+</ui:composition>

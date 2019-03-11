@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html" >
+
+<div class="panel panel-default">
+       
+        	<div class="panel-body">
+            	<div class="table-responsive">
+
+<h:form>
+		<h:dataTable value="#{forumBean.ListWords()}" var="x" border="1" styleClass="table table-striped table-bordered table-hover">>
+
+			<f:facet name="header">
+				<h:outputText value="gestion forum" />
+			</f:facet>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Forbidden Words" />
+				</f:facet>
+				<h:outputText value="#{x.label}" />
+			</h:column>
+
+
+
+                 <h:column>
+				<f:facet name="header">
+					<h:outputText value="choisir" />
+				</f:facet>
+				<h:commandButton value="choisir" styleClass="btn btn-primary btn-sm">
+				<f:setPropertyActionListener
+				 value="#{x}" target="#{forumBean.dic}" />
+				<f:setPropertyActionListener 
+				value="true" target="#{forumBean.displayFormDic}" />
+				
+				</h:commandButton>
+				</h:column>
+				
+		</h:dataTable>
+
+		
+		<h:commandButton actionListener="#{forumBean.doNewWord()}" 
+		value="new" styleClass="btn btn-primary btn-sm" />
+		
+
+	</h:form>
+	
+	<h:form>
+			<h:commandButton action="#{loginBean.doLogout()}" value="logout" styleClass="btn btn-primary btn-sm"/>
+	</h:form>
+
+	</div>
+      </div>
+</div>
+
+	
+</ui:composition>

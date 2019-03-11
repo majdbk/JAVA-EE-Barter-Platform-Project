@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+      
+      
+
+<h:head>
+
+	<h:outputStylesheet library="resourcestemplate/css" name="bootstrap.css" ></h:outputStylesheet>
+	<h:outputStylesheet library="resourcestemplate/css" name="bootstrapp.css" ></h:outputStylesheet>
+	<h:outputStylesheet library="resourcestemplate/css" name="normalize.min.css" ></h:outputStylesheet>
+	<h:outputStylesheet library="resourcestemplate/css" name="font-awesome.min.css" ></h:outputStylesheet>
+	<h:outputStylesheet library="resourcestemplate/css" name="animate.css" ></h:outputStylesheet>
+	<h:outputStylesheet library="resourcestemplate/css" name="templatemo-misc.css" ></h:outputStylesheet>
+	<h:outputStylesheet library="resourcestemplate/css" name="templatemo-style.css" ></h:outputStylesheet>
+ 	<h:outputStylesheet library="resourcestemplate/css" name="components.css" ></h:outputStylesheet>
+ 
+ 	<h:outputScript library="resourcesfront/js/vendor" name="modernizr-2.6.2.min.js"> </h:outputScript>
+	
+		<title><ui:insert name="title"></ui:insert></title> 
+		
+		<ui:include src="/template/header.xhtml" />
+		
+
+</h:head> 
+
+<h:body> 
+		
+	<h:outputScript library="resources/js/vendor" name="jquery-1.10.1.min.js"> </h:outputScript>
+		
+	
+	    <div class="content-section">
+        <div class="container">
+            <div class="row">
+      
+                <div >
+                    
+                    <ui:insert name="main"></ui:insert>
+                    
+                </div> 
+       
+            </div>
+
+        </div> 
+    </div> 
+    
+    
+<ui:include src="/template/footer.xhtml" />
+
+   
+    
+    <h:outputScript library="resourcestemplate/js" name="jquery.easing-1.3.js"> </h:outputScript>
+ 	<h:outputScript library="resourcestemplate/js" name="bootstrap.js"> </h:outputScript>
+	<h:outputScript library="resourcestemplate/js" name="plugins.js"> </h:outputScript> 	
+	<h:outputScript library="resourcestemplate/js" name="main.js"> </h:outputScript> 	
+
+</h:body> 
+
+</html>

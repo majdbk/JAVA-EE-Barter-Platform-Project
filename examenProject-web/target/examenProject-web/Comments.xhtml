@@ -1,0 +1,83 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+      
+      
+      <div class="panel panel-default">
+       
+        	<div class="panel-body">
+            	<div class="table-responsive">
+
+<h:form rendered="#{forumBean.displayCom}">
+
+		<h:dataTable value="#{forumBean.comments}" var="a" border="1" styleClass="table table-striped table-bordered table-hover">>
+
+			<f:facet name="header">
+				<h:outputText value="gestion Comments" />
+			</f:facet>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="label" />
+				</f:facet>
+				<h:outputText value="#{a.comment}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="note" />
+				</f:facet>
+				<h:outputText value="#{a.note}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="date" />
+				</f:facet>
+				<h:outputText value="#{a.date}" />
+			</h:column>
+
+
+				<h:column>
+				<f:facet name="header">
+					<h:outputText value="like" />
+				</f:facet>
+				<h:outputText value="liked" rendered="#{forumBean.veriflikeCom(forumBean.LB.user.idSwapper,a.idComments)==true}"/>
+				<h:commandButton value="like" action="#{forumBean.dolikeCom()}" rendered="#{forumBean.veriflikeCom(forumBean.LB.user.idSwapper,a.idComments)==false}" styleClass="btn btn-primary btn-sm">
+				<f:setPropertyActionListener
+				 value="#{a}" target="#{forumBean.comment}" />
+				</h:commandButton>
+				
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="delete" />
+				</f:facet>
+				<h:commandButton value="delete" action="#{forumBean.dodeleteCom()}" rendered="#{a.swapper.idSwapper==forumBean.LB.user.idSwapper}" styleClass="btn btn-primary btn-sm">
+				<f:setPropertyActionListener
+				 value="#{a}" target="#{forumBean.comment}" />
+				</h:commandButton>
+				
+			</h:column>
+			 
+			
+			
+
+
+
+		</h:dataTable>
+
+		<h:commandButton actionListener="#{forumBean.doNewCom()}" 
+		value="new" styleClass="btn btn-primary btn-sm" />
+		<h:commandButton actionListener="#{forumBean.doCancel()}"
+				value="cancel"  styleClass="btn btn-primary btn-sm"/>
+		
+
+	</h:form>
+
+</div>
+      </div>
+</div>
+
+</ui:composition>

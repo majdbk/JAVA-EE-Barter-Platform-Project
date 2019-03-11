@@ -1,0 +1,33 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"> 
+      
+      
+      
+      <div Class="contact-form">
+      <h:form rendered="#{forumBean.displayFormCom}" name="contactform" id="contactform">
+		<h:panelGrid columns="1">
+			
+			
+
+			<h:outputText value="Comment here.." />
+			<h:inputText placeholder="fill me" value="#{forumBean.comment.comment}" >
+			
+			</h:inputText>
+		</h:panelGrid>
+		<h:panelGrid columns="1">
+
+			<h:commandButton actionListener="#{forumBean.doAdd()}"
+				value="add" />
+			
+
+
+		</h:panelGrid>
+	</h:form>
+</div>
+      
+
+</ui:composition>
